@@ -43,7 +43,7 @@ class CarCamera():
     self.video_path = "./video/" + self.file_name + ".avi"
 
     self.cap = cv2.VideoCapture(self.gstreamer_pipeline(
-      capture_width=640, capture_height=368, display_width=640, display_height=368, framerate=30, flip_method = flip_method
+      capture_width=640 , capture_height=368, display_width=640, display_height=368, framerate=30, flip_method = flip_method
     ), cv2.CAP_GSTREAMER)
 
     self.out = cv2.VideoWriter(self.video_path, cv2.VideoWriter_fourcc(*'XVID'), 30.0, (640,368))
