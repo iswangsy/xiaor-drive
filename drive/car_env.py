@@ -11,7 +11,7 @@ from sensor.car_sensor import CarSensor
 CAR_INSTANCE = 'xiaor'
 MAX_STOP = 3
 
-from camera.jetson_camera import CarCamera
+from drive.camera.jetson_camera import CarCamera
 
 class CarEnv:
     
