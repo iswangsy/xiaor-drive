@@ -5,6 +5,10 @@ import io
 import datetime
 import numpy as np
 import cv2
+import sys
+import os
+if __name__ == '__main__':
+    sys.path.append(os.path.dirname(sys.path[0]))
 
 current_frame = None
 video_recording = True

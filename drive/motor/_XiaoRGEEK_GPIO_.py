@@ -11,7 +11,10 @@ XR.DigitalRead(IR_R)	#读取IR_R引脚状态
 XR.ENAset(100)			#设置ENA占空比来调速，0-100之间
 XR.ENBset(100)			#设置ENB占空比来调速，0-100之间
 '''
-
+import sys
+import os
+if __name__ == '__main__':
+    sys.path.append(os.path.dirname(sys.path[0]))
 import Jetson.GPIO as GPIO
 
 #######################################

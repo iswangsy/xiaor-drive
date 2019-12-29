@@ -11,6 +11,10 @@ from sensor.car_sensor import CarSensor
 CAR_INSTANCE = 'xiaor'
 MAX_STOP = 3
 
+import sys
+import os
+if __name__ == '__main__':
+    sys.path.append(os.path.dirname(sys.path[0]))
 from camera.jetson_camera import CarCamera
 
 class CarEnv:

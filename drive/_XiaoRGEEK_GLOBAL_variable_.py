@@ -9,6 +9,10 @@ glo.xx
 '''
 ###########################################################
 ################可手动修改的参数###########################
+import sys
+import os
+if __name__ == '__main__':
+    sys.path.append(os.path.dirname(sys.path[0]))
 Radar_distence	= 15		#超声波测距
 servo_angle_max = 160		#舵机角度上限值，防止舵机卡死，可设置小于180的数值
 servo_angle_min = 15		#舵机角度下限值，防止舵机卡死，可设置大于0的数值
