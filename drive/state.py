@@ -1,5 +1,5 @@
 import numpy as np
-import blosc
+
 import cv2
 
 class State:
@@ -21,8 +21,8 @@ class State:
         screen.resize((State.IMAGE_SIZE, State.IMAGE_SIZE, 1))
         
         if State.useCompression:
-                screen = blosc.compress(
-                np.reshape(screen, State.IMAGE_SIZE * State.IMAGE_SIZE).tobytes(), typesize=1)
+                screen =
+                np.reshape(screen, State.IMAGE_SIZE * State.IMAGE_SIZE).tobytes()
 
         newState = State()
         if hasattr(self, 'screens'):
@@ -39,8 +39,8 @@ class State:
             s = []
             for i in range(State.step_frames):
                 s.append(np.reshape(np.fromstring(
-                    blosc.decompress(
-                        self.screens[i]), dtype=np.uint8), (State.IMAGE_SIZE, State.IMAGE_SIZE, 1)))
+
+                        self.screens[i]), dtype=np.uint8), (State.IMAGE_SIZE, State.IMAGE_SIZE, 1))
         else:
             s = self.screens
         if State.step_frames == 1:
