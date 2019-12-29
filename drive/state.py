@@ -21,8 +21,7 @@ class State:
         screen.resize((State.IMAGE_SIZE, State.IMAGE_SIZE, 1))
         
         if State.useCompression:
-                screen =
-                np.reshape(screen, State.IMAGE_SIZE * State.IMAGE_SIZE).tobytes()
+            screen = np.reshape(screen, State.IMAGE_SIZE * State.IMAGE_SIZE).tobytes()
 
         newState = State()
         if hasattr(self, 'screens'):
