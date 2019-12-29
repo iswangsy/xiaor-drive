@@ -56,6 +56,12 @@ class CarCamera():
         self.text_path = "./video/" + self.file_name + ".txt"
         self.text_file = open(self.text_path, "a")
 
+    def add_note_to_video(self, note):
+        time = datetime.datetime.now()
+        time_difference = time - self.start_time
+        self.text_file.write(str(time_difference) + ": " + note + "\n")
+        self.text_file.flush()
+
     def start_recording(self):
         self.thread = VideoRecording(self.cap, self.out)
         self.thread.start()
@@ -93,11 +99,6 @@ class CarCamera():
                 'video/x-raw, format=(string)BGR ! appsink' % (
                 capture_width, capture_height, framerate, flip_method, display_width, display_height))
 
-    def add_note_to_video(self, note):
-        time = datetime.datetime.now()
-        time_difference = time - self.start_time
-        self.text_file.write(str(time_difference) + ": " + note + "\n")
-        self.text_file.flush()
 
 
 if __name__ == '__main__':
