@@ -11,7 +11,7 @@ from sensor.car_sensor import CarSensor
 CAR_INSTANCE = 'xiaor'
 MAX_STOP = 3
 
-from drive.camera.jetson_camera import CarCamera
+from camera.jetson_camera import CarCamera
 
 class CarEnv:
     
@@ -19,10 +19,7 @@ class CarEnv:
         
         self.outputDir = outputDir
 
-        if CAR_INSTANCE == 'hjduino':#hjduino car has camera upside down, 2 is flip method
-          self.camera = CarCamera(2)
-        else:
-          self.camera = CarCamera()
+        self.camera = CarCamera()
         self.motor = CarMotor(CAR_INSTANCE)
         self.sensor = CarSensor(CAR_INSTANCE)
         self.step_frames = args.frame

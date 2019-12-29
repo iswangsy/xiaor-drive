@@ -21,7 +21,7 @@ class State:
         screen.resize((State.IMAGE_SIZE, State.IMAGE_SIZE, 1))
         
         if State.useCompression:
-            screen = blosc.compress(
+                screen = blosc.compress(
                 np.reshape(screen, State.IMAGE_SIZE * State.IMAGE_SIZE).tobytes(), typesize=1)
 
         newState = State()

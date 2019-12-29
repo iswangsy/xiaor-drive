@@ -20,9 +20,9 @@ class VideoRecording(Thread):
         thread = VideoRecordingSupport(self.out)
         thread.start()
         global current_frame
-        while video_recording:
+        while (video_recording):
             ret, frame = self.cap.read()
-            if ret:
+            if ret == True:
                 current_frame = frame
             else:
                 break
@@ -91,7 +91,7 @@ class CarCamera():
                 'video/x-raw, width=(int)%d, height=(int)%d, format=(string)BGRx ! '
                 'videoconvert ! '
                 'video/x-raw, format=(string)BGR ! appsink' % (
-                    capture_width, capture_height, framerate, flip_method, display_width, display_height))
+                capture_width, capture_height, framerate, flip_method, display_width, display_height))
 
     def add_note_to_video(self, note):
         time = datetime.datetime.now()
