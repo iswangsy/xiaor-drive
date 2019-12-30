@@ -5,7 +5,6 @@ import os
 if __name__ == '__main__':
     sys.path.append(os.path.dirname(sys.path[0]))
 import time
-import _XiaoRGEEK_GPIO_ as XR
 from drive import _XiaoRGEEK_GLOBAL_variable_ as glo
 import Jetson.GPIO as GPIO
 
@@ -83,62 +82,62 @@ def CarMotor(car_type):
 
 def _Motor_Forward_():
     # print ' M2-L FOR;M1-R FOR; '
-    GPIOSet(XR.ENA)
-    GPIOSet(XR.ENB)
-    GPIOSet(XR.IN1)
-    GPIOClr(XR.IN2)
-    GPIOSet(XR.IN3)
-    GPIOClr(XR.IN4)
-    GPIOClr(XR.LED1)
-    GPIOClr(XR.LED2)
+    GPIOSet(ENA)
+    GPIOSet(ENB)
+    GPIOSet(IN1)
+    GPIOClr(IN2)
+    GPIOSet(IN3)
+    GPIOClr(IN4)
+    GPIOClr(LED1)
+    GPIOClr(LED2)
 
 
 def _Motor_Backward_():
     # print ' M2-L REV;M1-R REV; '
-    GPIOSet(XR.ENA)
-    GPIOSet(XR.ENB)
-    GPIOClr(XR.IN1)
-    GPIOSet(XR.IN2)
-    GPIOClr(XR.IN3)
-    GPIOSet(XR.IN4)
-    GPIOSet(XR.LED1)
-    GPIOClr(XR.LED2)
+    GPIOSet(ENA)
+    GPIOSet(ENB)
+    GPIOClr(IN1)
+    GPIOSet(IN2)
+    GPIOClr(IN3)
+    GPIOSet(IN4)
+    GPIOSet(LED1)
+    GPIOClr(LED2)
 
 
 def _Motor_TurnLeft_():
     # print ' M2-L REV;M1-R FOR; '
-    GPIOSet(XR.ENA)
-    GPIOSet(XR.ENB)
-    GPIOSet(XR.IN1)
-    GPIOClr(XR.IN2)
-    GPIOClr(XR.IN3)
-    GPIOSet(XR.IN4)
-    GPIOClr(XR.LED1)
-    GPIOSet(XR.LED2)
+    GPIOSet(ENA)
+    GPIOSet(ENB)
+    GPIOSet(IN1)
+    GPIOClr(IN2)
+    GPIOClr(IN3)
+    GPIOSet(IN4)
+    GPIOClr(LED1)
+    GPIOSet(LED2)
 
 
 def _Motor_TurnRight_():
     # print ' M2-L FOR;M1-R REV; '
-    GPIOSet(XR.ENA)
-    GPIOSet(XR.ENB)
-    GPIOClr(XR.IN1)
-    GPIOSet(XR.IN2)
-    GPIOSet(XR.IN3)
-    GPIOClr(XR.IN4)
-    GPIOClr(XR.LED1)
-    GPIOSet(XR.LED2)
+    GPIOSet(ENA)
+    GPIOSet(ENB)
+    GPIOClr(IN1)
+    GPIOSet(IN2)
+    GPIOSet(IN3)
+    GPIOClr(IN4)
+    GPIOClr(LED1)
+    GPIOSet(LED2)
 
 
 def _Motor_Stop_():
     # print ' M2-L STOP;M1-R STOP; '
-    GPIOClr(XR.ENA)
-    GPIOClr(XR.ENB)
-    GPIOClr(XR.IN1)
-    GPIOClr(XR.IN2)
-    GPIOClr(XR.IN3)
-    GPIOClr(XR.IN4)
-    GPIOSet(XR.LED1)
-    GPIOClr(XR.LED2)
+    GPIOClr(ENA)
+    GPIOClr(ENB)
+    GPIOClr(IN1)
+    GPIOClr(IN2)
+    GPIOClr(IN3)
+    GPIOClr(IN4)
+    GPIOSet(LED1)
+    GPIOClr(LED2)
 
 
 def ENA_Speed(EA_num):
