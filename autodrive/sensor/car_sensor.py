@@ -35,9 +35,6 @@ class CarSensorBase(ABC):
         GPIO.setup(self.TRIG(), GPIO.OUT, initial=GPIO.LOW)  # 超声波模块发射端管脚设置trig
         GPIO.setup(self.ECHO(), GPIO.IN, pull_up_down=GPIO.PUD_UP)  # 超声波模块接收端管脚设置echo
 
-        GPIO.setup(self.distance_sensor_front(), GPIO.IN)
-        GPIO.setup(self.lx_distance_sensor_front(), GPIO.IN)
-        GPIO.setup(self.rx_distance_sensor_front(), GPIO.IN)
         GPIO.setup(self.lx_line_sensor(), GPIO.IN)
         GPIO.setup(self.rx_line_sensor(), GPIO.IN)
 
@@ -82,9 +79,9 @@ class CarSensorBase(ABC):
         return self.GPIO.input(self.IR_L()) == self.GPIO.LOW
 
     def add_callback_to_crash(self, callback):
-        self.GPIO.add_event_detect(self.distance_sensor_front(), self.GPIO.FALLING, callback=callback)
-        self.GPIO.add_event_detect(self.rx_distance_sensor_back(), self.GPIO.FALLING, callback=callback)
-        self.GPIO.add_event_detect(self.lx_distance_sensor_back(), self.GPIO.FALLING, callback=callback)
+        if self.front_distance() <= 1:
+            callback = callback
+
 
     def add_callback_to_lx_line_sensor(self, callback):
         self.GPIO.add_event_detect(self.lx_line_sensor(), self.GPIO.FALLING, callback=callback)
