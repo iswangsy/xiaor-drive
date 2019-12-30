@@ -104,8 +104,8 @@ class CarSensorBase(ABC):
             time.sleep(1)
 
 class CarSensorXiaoR(CarSensorBase):
-    def __init__(self, isJetson=False, isRaspberry=False):
-        super(CarSensorXiaoR, self).__init__(isJetson, isRaspberry)
+    def __init__(self, isJetson=True):
+        super(CarSensorXiaoR, self).__init__(isJetson)
 
     def ECHO(self):
         return 4
