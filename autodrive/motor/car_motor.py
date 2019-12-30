@@ -90,72 +90,72 @@ def CarMotor(car_type):
 
 def _Motor_Forward_():
     # print ' M2-L FOR;M1-R FOR; '
-    XR.GPIOSet(XR.ENA)
-    XR.GPIOSet(XR.ENB)
-    XR.GPIOSet(XR.IN1)
-    XR.GPIOClr(XR.IN2)
-    XR.GPIOSet(XR.IN3)
-    XR.GPIOClr(XR.IN4)
-    XR.GPIOClr(XR.LED1)
-    XR.GPIOClr(XR.LED2)
+    GPIOSet(XR.ENA)
+    GPIOSet(XR.ENB)
+    GPIOSet(XR.IN1)
+    GPIOClr(XR.IN2)
+    GPIOSet(XR.IN3)
+    GPIOClr(XR.IN4)
+    GPIOClr(XR.LED1)
+    GPIOClr(XR.LED2)
 
 
 def _Motor_Backward_():
     # print ' M2-L REV;M1-R REV; '
-    XR.GPIOSet(XR.ENA)
-    XR.GPIOSet(XR.ENB)
-    XR.GPIOClr(XR.IN1)
-    XR.GPIOSet(XR.IN2)
-    XR.GPIOClr(XR.IN3)
-    XR.GPIOSet(XR.IN4)
-    XR.GPIOSet(XR.LED1)
-    XR.GPIOClr(XR.LED2)
+    GPIOSet(XR.ENA)
+    GPIOSet(XR.ENB)
+    GPIOClr(XR.IN1)
+    GPIOSet(XR.IN2)
+    GPIOClr(XR.IN3)
+    GPIOSet(XR.IN4)
+    GPIOSet(XR.LED1)
+    GPIOClr(XR.LED2)
 
 
 def _Motor_TurnLeft_():
     # print ' M2-L REV;M1-R FOR; '
-    XR.GPIOSet(XR.ENA)
-    XR.GPIOSet(XR.ENB)
-    XR.GPIOSet(XR.IN1)
-    XR.GPIOClr(XR.IN2)
-    XR.GPIOClr(XR.IN3)
-    XR.GPIOSet(XR.IN4)
-    XR.GPIOClr(XR.LED1)
-    XR.GPIOSet(XR.LED2)
+    GPIOSet(XR.ENA)
+    GPIOSet(XR.ENB)
+    GPIOSet(XR.IN1)
+    GPIOClr(XR.IN2)
+    GPIOClr(XR.IN3)
+    GPIOSet(XR.IN4)
+    GPIOClr(XR.LED1)
+    GPIOSet(XR.LED2)
 
 
 def _Motor_TurnRight_():
     # print ' M2-L FOR;M1-R REV; '
-    XR.GPIOSet(XR.ENA)
-    XR.GPIOSet(XR.ENB)
-    XR.GPIOClr(XR.IN1)
-    XR.GPIOSet(XR.IN2)
-    XR.GPIOSet(XR.IN3)
-    XR.GPIOClr(XR.IN4)
-    XR.GPIOClr(XR.LED1)
-    XR.GPIOSet(XR.LED2)
+    GPIOSet(XR.ENA)
+    GPIOSet(XR.ENB)
+    GPIOClr(XR.IN1)
+    GPIOSet(XR.IN2)
+    GPIOSet(XR.IN3)
+    GPIOClr(XR.IN4)
+    GPIOClr(XR.LED1)
+    GPIOSet(XR.LED2)
 
 
 def _Motor_Stop_():
     # print ' M2-L STOP;M1-R STOP; '
-    XR.GPIOClr(XR.ENA)
-    XR.GPIOClr(XR.ENB)
-    XR.GPIOClr(XR.IN1)
-    XR.GPIOClr(XR.IN2)
-    XR.GPIOClr(XR.IN3)
-    XR.GPIOClr(XR.IN4)
-    XR.GPIOSet(XR.LED1)
-    XR.GPIOClr(XR.LED2)
+    GPIOClr(XR.ENA)
+    GPIOClr(XR.ENB)
+    GPIOClr(XR.IN1)
+    GPIOClr(XR.IN2)
+    GPIOClr(XR.IN3)
+    GPIOClr(XR.IN4)
+    GPIOSet(XR.LED1)
+    GPIOClr(XR.LED2)
 
 
 def _ENA_Speed_(EA_num):
     print ' M1_R速度变为 %d ' % EA_num
-    XR.ENAset(EA_num)
+    ENAset(EA_num)
 
 
 def _ENB_Speed_(EB_num):
     print ' M2_L速度变为 %d ' % EB_num
-    XR.ENBset(EB_num)
+    ENBset(EB_num)
 
 
 class Robot_Direction:

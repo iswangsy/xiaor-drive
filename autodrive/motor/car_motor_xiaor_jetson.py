@@ -3,7 +3,6 @@ import os
 if __name__ == '__main__':
     sys.path.append(os.path.dirname(sys.path[0]))
 import time
-import _XiaoRGEEK_GPIO_ as XR
 from drive import _XiaoRGEEK_GLOBAL_variable_ as glo
 
 
