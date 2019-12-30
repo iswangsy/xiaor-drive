@@ -1,13 +1,14 @@
 # coding=utf-8
 import sys
 import os
+
+
 if __name__ == '__main__':
     sys.path.append(os.path.dirname(sys.path[0]))
 import Jetson.GPIO as GPIO
 
 
 def CarSensor(car_type):
-    from car_sensor_xiaor import CarSensorXiaoR
     return CarSensorXiaoR(isJetson=True)
 
 
@@ -101,3 +102,24 @@ class CarSensorBase(ABC):
             print("above line rx", self.rx_above_line())
             print("above line lx", self.lx_above_line())
             time.sleep(1)
+
+class CarSensorXiaoR(CarSensorBase):
+    def __init__(self, isJetson=False, isRaspberry=False):
+        super(CarSensorXiaoR, self).__init__(isJetson, isRaspberry)
+
+    def ECHO(self):
+        return 4
+
+    def TRIG(self):
+        return 17
+
+    def IR_L(self):
+        return 27
+
+    def IR_R(self):
+        return 18
+
+
+if __name__ == '__main__':
+    carSensor = CarSensorXiaoR(isJetson=True)
+    carSensor.test()

@@ -28,7 +28,7 @@ class CarEnv:
         else:
             self.camera = CarCamera()
         self.motor = CarMotor()
-        self.sensor = CarSensor()
+        self.sensor = CarSensor(CAR_INSTANCE)
         self.step_frames = args.frame
 
         self.camera.start_recording()
