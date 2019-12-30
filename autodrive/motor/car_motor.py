@@ -30,6 +30,7 @@ class Motor():
 
 class CarMotor():
     def __init__(self):
+        super(CarMotor, self).__init__()
         GPIO.setmode(GPIO.BCM)
         self.motor_lx = Motor(26, 21)
         self.motor_rx = Motor(16, 19)

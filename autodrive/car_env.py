@@ -20,7 +20,7 @@ else:
 class CarEnv:
 
     def __init__(self, args, outputDir):
-
+        super(CarEnv, self).__init__()
         self.outputDir = outputDir
 
         if CAR_INSTANCE == 'hjduino':  # hjduino car has camera upside down, 2 is flip method
