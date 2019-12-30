@@ -1,6 +1,7 @@
 # coding=utf-8
 import sys
 import os
+
 if __name__ == '__main__':
     sys.path.append(os.path.dirname(sys.path[0]))
 import time
@@ -75,14 +76,6 @@ def DigitalRead(gpio):
     return GPIO.input(gpio)
 
 
-def ENAset(EA_num):
-    ENA_pwm.ChangeDutyCycle(EA_num)
-
-
-def ENBset(EB_num):
-    ENB_pwm.ChangeDutyCycle(EB_num)
-
-
 def CarMotor(car_type):
     if car_type == 'xiaor':
         return Robot_Direction()
@@ -148,14 +141,18 @@ def _Motor_Stop_():
     GPIOClr(XR.LED2)
 
 
-def _ENA_Speed_(EA_num):
-    print ' M1_R速度变为 %d ' % EA_num
-    ENAset(EA_num)
+def ENA_Speed(EA_num):
+    speed = hex(eval('0x' + EA_num))
+    speed = int(speed, 16)
+    print ('EA_A改变啦 %d ' % speed)
+    ENA_pwm.ChangeDutyCycle(speed)
 
 
-def _ENB_Speed_(EB_num):
-    print ' M2_L速度变为 %d ' % EB_num
-    ENBset(EB_num)
+def ENB_Speed(EB_num):
+    speed = hex(eval('0x' + EB_num))
+    speed = int(speed, 16)
+    print ('EB_B改变啦 %d ' % speed)
+    ENB_pwm.ChangeDutyCycle(speed)
 
 
 class Robot_Direction:
