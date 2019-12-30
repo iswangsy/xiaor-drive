@@ -105,7 +105,7 @@ class CarSensorBase(ABC):
 
 class CarSensorXiaoR(CarSensorBase):
     def __init__(self, isJetson=True):
-        super(CarSensorXiaoR, self).__init__(isJetson)
+        super(CarSensorXiaoR, self).__init__()
 
     def ECHO(self):
         return 4
