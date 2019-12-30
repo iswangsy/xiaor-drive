@@ -35,9 +35,6 @@ class CarSensorBase(ABC):
         GPIO.setup(self.TRIG(), GPIO.OUT, initial=GPIO.LOW)  # 超声波模块发射端管脚设置trig
         GPIO.setup(self.ECHO(), GPIO.IN, pull_up_down=GPIO.PUD_UP)  # 超声波模块接收端管脚设置echo
 
-        GPIO.setup(self.lx_line_sensor(), GPIO.IN)
-        GPIO.setup(self.rx_line_sensor(), GPIO.IN)
-
     @abstractmethod
     def IR_R(self):
         pass
@@ -84,10 +81,10 @@ class CarSensorBase(ABC):
 
 
     def add_callback_to_lx_line_sensor(self, callback):
-        self.GPIO.add_event_detect(self.lx_line_sensor(), self.GPIO.FALLING, callback=callback)
+        self.GPIO.add_event_detect(self.IR_L(), self.GPIO.FALLING, callback=callback)
 
     def add_callback_to_rx_line_sensor(self, callback):
-        self.GPIO.add_event_detect(self.rx_line_sensor(), self.GPIO.FALLING, callback=callback)
+        self.GPIO.add_event_detect(self.IR_R(), self.GPIO.FALLING, callback=callback)
 
     def get_channel_label(self, channel):
         return self.sensor_label[channel]
