@@ -28,7 +28,7 @@ class Motor():
         GPIO.output(self.pin2, GPIO.LOW)
 
 
-class CarMotorXiaoR():
+class CarMotor():
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
         self.motor_lx = Motor(26, 21)
