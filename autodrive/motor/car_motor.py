@@ -207,10 +207,10 @@ class Robot_Direction:
         _Motor_Stop_()
 
     def M1_Speed(self, EA_num):
-        _ENA_Speed_(EA_num)
+        ENA_Speed(EA_num)
 
     def M2_Speed(self, EB_num):
-        _ENB_Speed_(EB_num)
+        ENB_Speed(EB_num)
 
 
 if __name__ == '__main__':
